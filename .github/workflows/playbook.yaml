@@ -1,7 +1,7 @@
 on: push
 
 jobs:
-    check:
+    job1:
         runs-on: debian-latest
         steps:
         - run: cat /etc/os-release
