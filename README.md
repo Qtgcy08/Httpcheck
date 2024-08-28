@@ -1,1 +1,1 @@
-# httpcheck
+# curl2test
