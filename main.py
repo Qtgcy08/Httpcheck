@@ -1,11 +1,13 @@
 import os
 import time
+import requests
 
 count=0
 
 website=str(input("Please input your target:(bing.com)"))
 if(website==""):
     website="bing.com"
+
 
 interval=input("Please input execute interval:(0.5)")
 if(interval==""):
@@ -14,16 +16,15 @@ else:
     interval=int(interval)
 
 print(end='\n')
-print("curl2test is testing",website)
+print("Httpcheck is testing",website)
 print(end='\n')
 while  (True):
-    os.system("curl "+website)
+    back=requests.get("http://"+website)
     count+=1
-    #print(end='\n')
-    print("Test",count,"finish")
+    print("Code"+str(back.status_code)+" "+back.reason+",test"+str(count),"finish.")
     time.sleep(interval)
     if(count%10==0):
-        print(end='\n')
-        print("curl2test is testing",website)
+        print(end='\n') 
+        print("Httpcheck is testing",website)
         print(end='\n')
 #
