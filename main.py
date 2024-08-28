@@ -18,6 +18,7 @@ else:
 print(end='\n')
 print("Httpcheck is testing",website)
 print(end='\n')
+
 while  (True):
     back=requests.get("http://"+website)
     count+=1
